@@ -1,0 +1,17 @@
+<h2>Adjust Weights</h2>
+<p>Set the importance of each attribute. Values range from 0 (not important) to 10 (very important).</p>
+
+<div class="weight-slider" *ngFor="let attribute of attributes">
+  <label>{{ attribute.name }}</label>
+  <mat-slider
+    [min]="0"
+    [max]="10"
+    [step]="0.5"
+    [value]="attribute.weight"
+    (input)="attribute.weight = $event.value!"
+  ></mat-slider>
+  <span>{{ attribute.weight.toFixed(1) }}</span>
+</div>
+
+<button mat-raised-button color="primary" (click)="saveWeights()">Save Weights</button>
+

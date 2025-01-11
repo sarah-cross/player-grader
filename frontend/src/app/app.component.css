@@ -1,0 +1,13 @@
+
+.sidenav-container {
+    height: 100vh; /* Full viewport height */
+  }
+  
+  mat-sidenav {
+    width: 250px; /* Adjust this value to make the sidenav wider */
+  }
+  
+  mat-sidenav-content {
+    padding: 20px;
+  }
+  

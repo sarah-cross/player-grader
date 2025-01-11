@@ -1,0 +1,15 @@
+<div class="sliders-container">
+    <div class="slider" *ngFor="let attribute of attributes">
+      <h4>{{ attribute.name }}</h4>
+      <mat-slider
+        [min]="0"
+        [max]="100"
+        [step]="1"
+        [value]="attribute.value"
+        [vertical]="true"
+        (input)="onSliderChange($event, attribute)"
+      ></mat-slider>
+      <p>{{ attribute.value }}</p>
+    </div>
+  </div>
+  

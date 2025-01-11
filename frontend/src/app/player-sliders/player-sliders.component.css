@@ -1,0 +1,17 @@
+.sliders-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .slider {
+    text-align: center;
+    margin: 0 10px;
+  }
+  
+  mat-slider {
+    height: 200px; /* Adjust height for the sliders */
+    width: 20px;   /* Adjust width for the sliders */
+  }
+  

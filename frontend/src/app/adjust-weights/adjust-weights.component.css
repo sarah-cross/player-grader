@@ -1,0 +1,16 @@
+.weight-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  mat-slider {
+    width: 70%;
+    margin: 0 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

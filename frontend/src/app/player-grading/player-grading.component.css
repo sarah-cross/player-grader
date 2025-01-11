@@ -1,0 +1,60 @@
+.player-grading-container {
+    max-width: 1200px; /* Adjust this value for your desired width */
+    margin: 0 auto; /* Center the content */
+    padding-right: 40px;
+  }
+  
+
+/* Top Section */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures all cards stretch to the same height */
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    gap: 20px; /* Space between the cards */
+  }
+  
+  mat-card {
+    flex: 1; /* Ensures all cards take up equal space */
+    display: flex;
+    flex-direction: column; /* Ensures content flows vertically */
+    justify-content: space-between; /* Distributes content within the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Adjust content alignment inside cards */
+  .player-info-card {
+    text-align: left;
+  }
+  
+  .player-image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* Ensures the image is properly sized within the card */
+  }
+
+  .grade-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .grade-card h1 {
+    font-size: 160px; /* Large font size for the grade */
+    font-weight: bold; /* Bold text */
+    margin: 0; /* Remove default margins */
+  }
+  
+  
+  
+  /* Sliders Section */
+  app-player-sliders {
+    width: 100%;
+    margin-top: 20px;
+  }
