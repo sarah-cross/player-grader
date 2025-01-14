@@ -1,9 +1,19 @@
+<mat-toolbar class="top-toolbar">
+  <span class="toolbar-title">Player Grader</span>
+</mat-toolbar>
+
 <mat-sidenav-container class="sidenav-container">
   <!-- Side Navigation -->
-  <mat-sidenav #sidenav mode="side" opened>
+  <mat-sidenav mode="side" opened class="sidenav">
     <mat-nav-list>
-      <a mat-list-item routerLink="/adjust-weights">Adjust Weights</a>
-      <a mat-list-item routerLink="/player-grading">Player Grading</a> 
+      <button mat-button routerLink="/adjust-weights" class="nav-button">
+        <mat-icon>scale</mat-icon>
+        Adjust Weights
+      </button>
+      <button mat-button routerLink="/player-grading" class="nav-button">
+        <mat-icon>edit_note</mat-icon>
+        Player Grading
+      </button>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -12,6 +22,8 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
 
 
 

@@ -1,43 +1,89 @@
 <div class="player-grading-container">
     <div class="top-section">
-      <!-- Player Info Card -->
-      <mat-card class="player-info-card">
-        <mat-card-title>Player Info</mat-card-title>
-        <mat-card-content>
-          <p><strong>Name:</strong> {{ player.name }}</p>
-          <p><strong>Position:</strong> {{ player.position }}</p>
-          <p><strong>Height:</strong> {{ player.height }}</p>
-          <p><strong>Weight:</strong> {{ player.weight }}</p>
-          <p><strong>Stats:</strong></p>
-          <ul>
-            <li><strong>PTS:</strong> {{ player.stats.pts }}</li>
-            <li><strong>REB:</strong> {{ player.stats.reb }}</li>
-            <li><strong>AST:</strong> {{ player.stats.ast }}</li>
-            <li><strong>STL:</strong> {{ player.stats.stl }}</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-  
-      <!-- Player Image Card -->
-      <mat-card class="player-image-card">
-        <mat-card-content>
-          <img [src]="player.image" alt="{{ player.name }}" />
-        </mat-card-content>
-      </mat-card>
-  
-      <!-- Grade Card -->
-      <mat-card class="grade-card">
-        <mat-card-title>Grade</mat-card-title>
-        <mat-card-content>
-          <h1 [style.color]="getGradeColor()">{{ grade }}</h1>
-        </mat-card-content>
-      </mat-card>
-    </div>
+        <!-- Stats Card -->
+        <mat-card class="card stats-card">
+            <mat-card-header>
+            <mat-card-title>Statistics</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            <div class="stats-row">
+                <span class="stats-title">Points Per Game:</span>
+                <span class="stats-value">{{ player.stats.pts }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Assists Per Game:</span>
+                <span class="stats-value">{{ player.stats.ast }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Rebounds Per Game:</span>
+                <span class="stats-value">{{ player.stats.reb }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Blocks Per Game:</span>
+                <span class="stats-value">{{ player.stats.blk }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Steals Per Game:</span>
+                <span class="stats-value">{{ player.stats.stl }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">3P Made Per Game:</span>
+                <span class="stats-value">{{ player.stats.tpm }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Field Goal Percentage:</span>
+                <span class="stats-value">{{ player.stats.fgp }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">3-Point Percentage:</span>
+                <span class="stats-value">{{ player.stats.threepp }}</span>
+            </div>
+            <div class="stats-row">
+                <span class="stats-title">Free Throw Percentage:</span>
+                <span class="stats-value">{{ player.stats.ftp }}</span>
+            </div>
+            </mat-card-content>
+        </mat-card>
+      
+        <!-- Player Info Card -->
+        <mat-card class="card player-info-card">
+          <mat-card-header>
+            <mat-card-title>{{ player.name }}</mat-card-title>
+            <mat-card-subtitle>
+              {{ player.position }} | {{ player.height }} | {{ player.weight }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <img [src]="player.image" alt="{{ player.name }}" class="player-image" />
+          </mat-card-content>
+        </mat-card>
+      
+        <!-- Acquisition Grade Card -->
+        <mat-card class="card grade-card">
+          <mat-card-header>
+            <mat-card-title>Acquisition Grade</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h1 [style.color]="getGradeColor()">{{ grade }}</h1>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
   
     <!-- Sliders Section -->
     <app-player-sliders 
         [attributes]="attributes"
         (slidersUpdated)="calculateGrade()">
     </app-player-sliders>
+
+    <!-- Notes Section -->
+    <div class="notes-section ">
+        <mat-form-field class="notes-field" appearance="fill">
+        <mat-label>Evaluator Notes</mat-label>
+        <textarea matInput placeholder="Add notes about the player here..." rows="10"></textarea>
+        </mat-form-field>
+    </div>
+  
+
   </div>
   

@@ -1,17 +1,57 @@
-<h2>Adjust Weights</h2>
-<p>Set the importance of each attribute. Values range from 0 (not important) to 10 (very important).</p>
-
-<div class="weight-slider" *ngFor="let attribute of attributes">
-  <label>{{ attribute.name }}</label>
-  <mat-slider
-    [min]="0"
-    [max]="10"
-    [step]="0.5"
-    [value]="attribute.weight"
-    (input)="attribute.weight = $event.value!"
-  ></mat-slider>
-  <span>{{ attribute.weight.toFixed(1) }}</span>
-</div>
-
-<button mat-raised-button color="primary" (click)="saveWeights()">Save Weights</button>
-
+<div class="adjust-weights-container">
+    <div class="header">
+      <label for="position-select" class="apply-to-label">Apply to</label>
+      <mat-form-field appearance="fill" class="position-dropdown">
+        <mat-select
+          id="position-select"
+          [(ngModel)]="selectedPositions"
+          multiple
+          placeholder="Select Positions"
+          (selectionChange)="onPositionChange()"
+        >
+          <mat-option *ngFor="let position of positions" [value]="position">
+            {{ position }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-icon-button class="settings-button" (click)="openSettings()">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </div>
+  
+    <div class="features-list">
+      <div *ngFor="let feature of features" class="feature-item">
+        <span class="feature-label">{{ feature }}:</span>
+        <div class="slider-container">
+          <div class="horizontal-line"></div>
+          <mat-radio-group
+            [ngModel]="weights[selectedPositions[0]]?.[feature]"
+            (ngModelChange)="onWeightChange(selectedPositions[0], feature, $event)"
+            class="importance-scale"
+          >
+            <mat-radio-button
+              *ngFor="let option of importanceOptions"
+              [value]="option.value"
+              class="radio-button"
+            >
+              <span class="radio-label">{{ option.label }}</span>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!allWeightsSelected()"
+        (click)="saveWeights()"
+      >
+        Save Weights
+      </button>
+    </div>
+  </div>
+  
+  
+  

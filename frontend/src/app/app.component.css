@@ -1,13 +1,48 @@
-
+.top-toolbar {
+    background-color: #00499A;
+    color: white;
+    margin-bottom: 16px;
+}
 .sidenav-container {
-    height: 100vh; /* Full viewport height */
+    height: 90vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding-left: 20px;
+
   }
   
-  mat-sidenav {
-    width: 250px; /* Adjust this value to make the sidenav wider */
+  .sidenav {
+    width: 300px; /* Fixed width for the sidenav */
+    background-color:#002A59; /* Dark blue background */
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
   }
   
-  mat-sidenav-content {
-    padding: 20px;
+  .nav-button {
+    color: white;
+    justify-content: flex-start; /* Align content to the left */
+    text-align: left;
+    width: 100%;
+    padding-left: 24px; /* Adjust padding to bring items closer to the left */
+    font-size: 16px;
+    padding-bottom: 12px;
+
+  }
+  
+  .nav-button mat-icon {
+    margin-right: 8px;
+  }
+  
+  .mat-toolbar {
+    height: 64px; /* Default height */
+  }
+  
+  .toolbar-title {
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 40px;
+
   }
   
