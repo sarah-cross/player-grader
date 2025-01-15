@@ -17,18 +17,24 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { PlayerGradingComponent } from './player-grading/player-grading.component';
 import { AdjustWeightsComponent } from './adjust-weights/adjust-weights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayerSlidersComponent } from './player-sliders/player-sliders.component';
+import { FindPlayersComponent } from './find-players/find-players.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerSlidersComponent,
     PlayerGradingComponent,
-    AdjustWeightsComponent
+    AdjustWeightsComponent,
+    FindPlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,9 @@ import { PlayerSlidersComponent } from './player-sliders/player-sliders.componen
     MatStepperModule,
     MatRadioModule,
     FormsModule,
-
+    MatCheckboxModule,
+    MatPaginatorModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

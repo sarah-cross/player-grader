@@ -5,29 +5,26 @@ from django.utils import timezone
 
 
 class Player(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255)
-    position = models.CharField(max_length=50, null=True, blank=True)
-    height = models.CharField(max_length=50, null=True, blank=True)
-    weight = models.CharField(max_length=50, null=True, blank=True)
-
-    # Performance Statistics
-    points_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    rebounds_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    assists_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    steals_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    blocks_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    turnovers_per_game = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-
-    # Efficiency
-    field_goal_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    three_point_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    free_throw_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    efficiency_rating = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-
-    # Advanced Stats
-    true_shooting_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
-    usage_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    id = models.UUIDField(primary_key=True, editable=False)
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=10)
+    height = models.IntegerField(null=True, blank=True)
+    weight = models.IntegerField(null=True, blank=True)
+    team = models.CharField(max_length=100, null=True, blank=True)
+    points_per_game = models.FloatField(default=0.0)
+    rebounds_per_game = models.FloatField(default=0.0)
+    assists_per_game = models.FloatField(default=0.0)
+    steals_per_game = models.FloatField(default=0.0)
+    blocks_per_game = models.FloatField(default=0.0)
+    turnovers_per_game = models.FloatField(default=0.0)
+    field_goals_made = models.FloatField(default=0.0)
+    field_goals_att = models.FloatField(default=0.0)
+    three_points_made = models.FloatField(default=0.0)
+    three_points_att = models.FloatField(default=0.0)
+    free_throws_made = models.FloatField(default=0.0)
+    free_throws_att = models.FloatField(default=0.0)
+    efficiency = models.FloatField(default=0.0)
+    headshot = models.ImageField(upload_to='player_images/', null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,160 @@
+.find-players-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 200px;
+    padding-left: 80px;
+
+  }
+  
+  .search-bar {
+    width: 100%; /* Full width of the page */
+
+    
+  }
+  mat-form-field.full-width {
+    width: 100%; /* Ensure the input field takes up full width */
+  }
+  
+  input {
+    width: 100%; /* Ensure the input field itself stretches */
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .filter-container {
+    margin: 16px 0;
+  }
+  
+  .stacked-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between chips */
+  }
+  
+  .filter-chip {
+    cursor: pointer;
+    width: 100%; /* Full width if needed */
+    text-align: left;
+  }
+
+
+  .position-chip {
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  .position-chip.mat-chip-selected {
+    background-color: #3f51b5; /* Blue */
+    color: #fff;
+  }
+  
+  .position-chip:hover {
+    background-color: #d3d3d3;
+  }
+  .position-chip {
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  .position-chip.mat-chip-selected {
+    background-color: #3f51b5; /* Blue */
+    color: #fff;
+  }
+  
+  .position-chip:hover {
+    background-color: #d3d3d3;
+  }
+    
+
+
+  
+  .player-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    flex: 4;
+  }
+  
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+  }
+  
+  mat-card-header {
+    background-color: #f5f5f5; 
+    padding-top: 12px;
+    border-bottom: 2px solid #ccc;
+    justify-content: center;
+    margin: 0;  
+    min-height: 60px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+  }
+  
+  mat-card-subtitle {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  mat-card-content {
+    padding: 4px;
+    text-align: center; /* Centers content within the card */
+  }
+  
+
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 16px; /* Spacing between cards */
+
+  }
+  
+  .player-card {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .player-image {
+    width: 292px; /* Match the width of NBA player headshots */
+    height: 213px; /* Match the height of NBA player headshots */
+    object-fit: cover; /* Ensure the placeholder image fits nicely */
+    border-radius: 8px; /* Optional: match any rounding of NBA headshots */
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 300px; /* Adjust card width */
+  }
+
+  .paginator-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end; /* Align paginator to the bottom right */
+    margin-top: auto; /* Push it to the bottom */
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+  
+  mat-paginator {
+    font-size: 14px; /* Adjust as needed */
+    min-width: 300px; /* Prevent shrinking */
+  }
+  
